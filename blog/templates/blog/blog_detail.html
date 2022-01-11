@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+<br><br>
+<figure class="text-center"><h1><a href="{% url 'homepage' %}">Dobang</a> Gallery</h1></figure>
+
+<div class="row" >
+  <div class="col-md-6" >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'blog_list' %}">글 목록</a><br><br>
+  </div>
+</div>
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="row">
+       <div class="col-md-6">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{object.title}}
+    </div>
+    <div class="col-md-2">
+      {{object.author}}
+    </div>
+      <div class="col-md-1">
+        <a href="{% url 'blog_update' pk=blog.id %}">수정</a>
+      </div>
+      <div class="col-md-1">
+        <a href="{% url 'blog_update' pk=blog.id %}">삭제</a>
+      </div>
+    </div>
+  </li>
+    <li class="list-group-item">
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{object.content}}
+    </li>
+</ul>
+
+{% endblock %}

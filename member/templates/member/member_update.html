@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Add Member{% endblock %}
+{% block content %}
+<br><br>
+<figure class="text-center"><h1><a href="{% url 'homepage' %}">Dobang</a></h1></figure>
+<figure class="text-center"><h1>Update Member Information</h1></figure>
+<figure class="text-center"><h1>회원정보 수정</h1></figure>
+<p></p>
+<figure class="text-center"><h5>허위 사실 기재시 <strong style="color : red">즉각 사살</strong> 조치합니다</h5></figure>
+<br><br><br>
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <figure class="text-center">
+     <form action="" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="수정"></p>
+    </form>
+      </figure>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
+{% endblock %}
+

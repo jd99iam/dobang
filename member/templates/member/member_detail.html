@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Dobang members{% endblock %}
+{% block content %}
+<br><br>
+<figure class="text-center"><h1><a href="{% url 'homepage' %}">Dobang</a></h1></figure>
+<figure class="text-center"><h1>Member Information</h1></figure><br><br>
+<figure class="text-center"><h2>회원 정보</h2></figure>
+<br><br>
+<figure class="text-center"><h5>이 화면을 캡쳐해서 도방 <strong style="color : blue">ID-CARD</strong>로 사용가능합니다</h5></figure>
+<br><br>
+<figure class="text-center"><h2>직책 : {{object.member_info}}</h2></figure><br>
+<figure class="text-center"><h2>이름 : {{object.member_name}}</h2></figure>
+<br><br>
+<figure class="text-center">도방 회원 외 유출 시 <strong style="color : red">즉각 사살</strong></figure>
+{% endblock %}

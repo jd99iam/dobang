@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+<br><br>
+<figure class="text-center"><h1><a href="{% url 'homepage' %}">Dobang</a> Gallery</h1></figure>
+
+<div class="row">
+  <div class="col-md-6">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'blog_add' %}">글 작성</a><br><br>
+  </div>
+</div>
+{% for instance in object_list %}
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="row">
+       <div class="col-md-6">
+      <a href="{% url 'blog_detail' pk=instance.id %}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{instance.title}}</a>
+    </div>
+    <div class="col-md-2">
+      {{instance.author}}
+    </div>
+      <div class="col-md-1">
+        <a href="{% url 'blog_update' pk=instance.id %}">수정</a>
+      </div>
+      <div class="col-md-1">
+        <a href="{% url 'blog_delete' pk=instance.id %}">삭제</a>
+      </div>
+    </div>
+</ul>
+{% endfor %}
+{% endblock %}

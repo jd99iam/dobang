@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Dobang Blog Delete{% endblock %}
+{% block content %}
+<br><br>
+<figure class="text-center"><h1><a href="{% url 'homepage' %}">Dobang</a> Gallery</h1></figure>
+<br><br>
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+            <div class="alert alert-primary" role="alert">
+    <figure class="text-center">
+        정말 삭제하시겠습니까??
+    </figure>
+    </div>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+            <div class="alert alert-primary" role="alert">
+<form action="" method="post">
+    {% csrf_token %}
+    <figure class="text-center"><input type="submit" value="삭제하겠습니다" style="background: white;"></figure>
+</form>
+            </div>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+</div>
+{% endblock %}

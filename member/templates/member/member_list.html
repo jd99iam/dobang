@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Dobang members{% endblock %}
+{% block content %}
+<br><br>
+<figure class="text-center"><h1><a href="{% url 'homepage' %}">Dobang</a></h1></figure>
+<figure class="text-center"><h1>Members</h1></figure>
+<figure class="text-center"><h2>도 방 임 원 진</h2></figure>
+<br><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;직책</th>
+            <th scope="col">성함</th>
+            <th scope="col">관리</th>
+        </tr>
+    </thead>
+    {% for member in object_list %}
+    <tbody>
+        <tr>
+            <th scope="row"><br><h3>&nbsp;&nbsp;{{member.member_info}}</h3><br></th>
+            <td><br><h3><strong>{{member.member_name}}</strong></h3><br></td>
+            <td><a href="{% url 'detail' pk=member.id %}">자세히<br></a><a href="{% url 'update' pk=member.id %}">정보 수정<br></a><a href="{% url 'delete' pk=member.id %}">회원 탈퇴</a></td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+<figure class="text-end">도방의 회원이 되어 <strong style="color: crimson">세계를 호령</strong>하고 싶다면 ..<a href="{% url 'add' %}">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</figure>
+
+{% endblock %}

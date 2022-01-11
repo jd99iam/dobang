@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Add Member{% endblock %}
+{% block content %}
+<br><br>
+<figure class="text-center"><h1><a href="{% url 'homepage' %}">Dobang</a></h1></figure>
+<figure class="text-center"><h1>Sign up</h1></figure>
+<figure class="text-center"><h1>도방 회원가입</h1></figure>
+<p></p>
+<figure class="text-center"><h5>도방과 함께할 <strong>엘리트</strong>를 모집합니다</h5></figure>
+<br><br><br>
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <figure class="text-center">
+     <form action="" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+      <input type="submit" value="가입">
+    </form>
+      </figure>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
+{% endblock %}
